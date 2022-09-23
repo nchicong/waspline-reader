@@ -31,7 +31,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	  			}
 	  		});
 
-  		if (!whitelistMatched) {
+  		if (!!result.whitelist_urls && !whitelistMatched) {
   			return;
   		}
 
