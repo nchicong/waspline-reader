@@ -1,6 +1,16 @@
 (function() {
 'use strict';
 
+var styles = `
+  span.js-detect-wrap br {
+    display:none;
+	}
+`
+
+var styleSheet = document.createElement("style")
+styleSheet.innerText = styles
+document.head.appendChild(styleSheet)
+
 // Linear interpolate between v0 and v1 at percent t
 function lerp(v0, v1, t)
 {
