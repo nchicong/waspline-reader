@@ -35,6 +35,9 @@ function applyGradient(colors, color_text, gradient_size)
 	let lineno = 0;
 
 	for (let paragraph of paragraphs) {
+		if (paragraph.textContent.length < 35) { //Do not process paragraph or list short line
+			continue;
+		}
 		const lines = lineWrapDetector.getLines(paragraph);
 
 		for (let line of lines) {
