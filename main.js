@@ -2,8 +2,11 @@
 'use strict';
 
 var styles = `
-  span.js-detect-wrap br {
+  span.js-detect-wrap br { /* Workaround for redundant new line in some pages like aws.amazon.com */
     display:none;
+	}
+	p a { /* Workaround to differentiate links that does not have underline */
+    text-decoration: underline;
 	}
 `
 
