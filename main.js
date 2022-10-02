@@ -28,8 +28,8 @@ function hex_to_rgb(hex)
 // Color all lines in the page
 function applyGradient(colors, color_text, gradient_size)
 {
-	// span.xf-body-paragraph for tinhte.vn
-	const paragraphs = document.querySelectorAll('p,li,span.xf-body-paragraph');
+	// article.content span.xf-body-paragraph for tinhte.vn
+	const paragraphs = document.querySelectorAll('p,li, article.content span.xf-body-paragraph');
 
 	const base_color = hex_to_rgb(color_text);
 	let coloridx = 0;
