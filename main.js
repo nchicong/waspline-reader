@@ -8,6 +8,10 @@ var styles = `
 	p a { /* Workaround to differentiate links that does not have underline */
     text-decoration: underline;
 	}
+
+	span.highlighted {
+    font-size: larger;
+	}
 `
 
 var styleSheet = document.createElement("style")
@@ -32,14 +36,15 @@ function hex_to_rgb(hex)
 function applyGradient(colors, color_text, gradient_size)
 {
 	// article.content span.xf-body-paragraph for tinhte.vn
-	const paragraphs = document.querySelectorAll('p,li, article.content span.xf-body-paragraph');
+	// figcaption for isntapaper https://www.instapaper.com/read/1584282814
+	const paragraphs = document.querySelectorAll('p,li, article.content span.xf-body-paragraph, figcaption');
 
 	const base_color = hex_to_rgb(color_text);
 	let coloridx = 0;
 	let lineno = 0;
 
 	for (let paragraph of paragraphs) {
-		if (paragraph.textContent.length < 35) { //Do not process paragraph or list short line
+		if (paragraph.textContent.length < 30) { //Do not process paragraph or list short line
 			continue;
 		}
 		const lines = lineWrapDetector.getLines(paragraph);
