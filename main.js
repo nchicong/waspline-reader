@@ -36,15 +36,16 @@ function hex_to_rgb(hex)
 function applyGradient(colors, color_text, gradient_size)
 {
 	// article.content span.xf-body-paragraph for tinhte.vn
-	// figcaption for isntapaper https://www.instapaper.com/read/1584282814
-	const paragraphs = document.querySelectorAll('p,li, article.content span.xf-body-paragraph, figcaption');
+	// figcaption for https://www.instapaper.com/read/1584282814
+	// :not for https://getpocket.com/read/3626220764
+	const paragraphs = document.querySelectorAll(':not(li) > p, :not(li) > ul > li, :not(li) > ol > li, article.content span.xf-body-paragraph, figcaption');
 
 	const base_color = hex_to_rgb(color_text);
 	let coloridx = 0;
 	let lineno = 0;
 
 	for (let paragraph of paragraphs) {
-		if (paragraph.textContent.length < 30) { //Do not process paragraph or list short line
+		if (paragraph.textContent.length < 30 || !!paragraph.innerHTML.match("</code>")) { //Do not process paragraph or list short line
 			continue;
 		}
 		const lines = lineWrapDetector.getLines(paragraph);
