@@ -44,6 +44,8 @@ chrome.commands.onCommand.addListener(function (command, tab) {
 	chrome.tabs.executeScript(tab.id, {file: "/contentScript.js"});
 
   chrome.storage.local.get(defaultSettings, function(result) {
+    setTabColor(tab.id, "apply_gradient", result);
+    return;
 
     if (tabsMap[tab.id] && tabsMap[tab.id].enabled) {
 	    setTabColor(tab.id, "reset", result);

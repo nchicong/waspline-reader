@@ -9,8 +9,8 @@ var styles = `
     text-decoration: underline;
 	}
 
-	span.highlighted {
-    font-size: larger;
+	span.lighter {
+    opacity: 35%;
 	}
 `
 
