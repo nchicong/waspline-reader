@@ -10,7 +10,7 @@ var styles = `
 	}
 
 	span.lighter {
-    opacity: 35%;
+    opacity: 45%;
 	}
 `
 
@@ -45,7 +45,7 @@ function applyGradient(colors, color_text, gradient_size)
 	let lineno = 0;
 
 	for (let paragraph of paragraphs) {
-		if (paragraph.textContent.length < 30 || !!paragraph.innerHTML.match("</code>")) { //Do not process paragraph or list short line
+		if (paragraph.textContent.length < 30) { //Do not process paragraph or list short line
 			continue;
 		}
 		const lines = lineWrapDetector.getLines(paragraph);
