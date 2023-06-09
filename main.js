@@ -10,7 +10,10 @@ var styles = `
 	}
 
 	span.lighter {
-    opacity: 45%;
+    opacity: 55%;
+	}
+	span.darker {
+    font-weight: 500;
 	}
 `
 
@@ -38,7 +41,7 @@ function applyGradient(colors, color_text, gradient_size)
 	// article.content span.xf-body-paragraph for tinhte.vn
 	// figcaption for https://www.instapaper.com/read/1584282814
 	// :not for https://getpocket.com/read/3626220764
-	const paragraphs = document.querySelectorAll(':not(li) > p, :not(li) > ul > li, :not(li) > ol > li, article.content span.xf-body-paragraph, figcaption');
+	const paragraphs = document.querySelectorAll(':not(li) > p, :not(li) > ul > li, :not(li) > ol > li, article.content span.xf-body-paragraph, figcaption, :not(pre) > span > p');
 
 	const base_color = hex_to_rgb(color_text);
 	let coloridx = 0;
