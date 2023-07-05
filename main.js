@@ -13,7 +13,7 @@ var styles = `
     opacity: 55%;
 	}
 	span.darker {
-    font-weight: 500;
+    // font-weight: 500;
 	}
 `
 
