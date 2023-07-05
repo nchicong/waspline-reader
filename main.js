@@ -15,6 +15,9 @@ var styles = `
 	span.darker {
     // font-weight: 500;
 	}
+	a:not([class]) {
+	  text-decoration-line: underline !important;
+	}
 `
 
 var styleSheet = document.createElement("style")
